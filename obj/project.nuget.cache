@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zyLr1jI8uIctodCm+HQhPZ7Or7RA9WY/hoMl8LvX5+KZpFWIagyuKXJ8UYimAncWU6KV2kAkcFIXGfEsUtFadA==",
+  "dgSpecHash": "Z1D90Oef9eFeGIUcod4c9jzYGwdThQOVn840uoNzl31miYTGQoYLSA7T9dhrgmpiHw5NnCxHfgcQfl1fjhaneQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWeb - Joel\\PiensaPeruAPIWeb\\PiensaPeruAPIWeb.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWeb\\PiensaPeruAPIWeb\\PiensaPeruAPIWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
