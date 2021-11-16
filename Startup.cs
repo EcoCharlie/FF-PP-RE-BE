@@ -13,11 +13,19 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PiensaPeruAPIWeb.Domain.Repositories;
+using PiensaPeruAPIWeb.Domain.Repositories.Contents;
+using PiensaPeruAPIWeb.Domain.Repositories.Posts;
 using PiensaPeruAPIWeb.Domain.Repositories.Users;
+using PiensaPeruAPIWeb.Domain.Services.Contents;
+using PiensaPeruAPIWeb.Domain.Services.Posts;
 using PiensaPeruAPIWeb.Domain.Services.Users;
 using PiensaPeruAPIWeb.Persistence.Contexts;
 using PiensaPeruAPIWeb.Persistence.Repositories;
+using PiensaPeruAPIWeb.Persistence.Repositories.Contents;
+using PiensaPeruAPIWeb.Persistence.Repositories.Posts;
 using PiensaPeruAPIWeb.Persistence.Repositories.Users;
+using PiensaPeruAPIWeb.Services.Contents;
+using PiensaPeruAPIWeb.Services.Posts;
 using PiensaPeruAPIWeb.Services.Users;
 
 namespace PiensaPeruAPIWeb
@@ -52,6 +60,19 @@ namespace PiensaPeruAPIWeb
             //Global
             services.AddScoped<IUnitOfWork, UnitOfWork>(); 
             
+            //Scoped of Content Bounded
+            
+            //MilitantType
+            services.AddScoped<IMilitantTypeService, MilitantTypeService>();
+            services.AddScoped<IMilitantTypeRepository, MilitantTypeRepository>();
+            
+            //Period
+            services.AddScoped<IPeriodService,PeriodService>();
+            services.AddScoped<IPeriodRepository, PeriodRepository>();
+            
+            //PoliticalParty
+            services.AddScoped<IPoliticalPartyService, PoliticalPartyService>();
+            services.AddScoped<IPoliticalPartyRepository, PoliticalPartyRepository>();
             
             //Scoped of User Bounded
             
