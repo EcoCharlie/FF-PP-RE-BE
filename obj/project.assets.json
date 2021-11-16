@@ -5456,11 +5456,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWebBACK-Omar\\PiensaPeruAPIWeb.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWeb - Joel\\PiensaPeruAPIWeb\\PiensaPeruAPIWeb.csproj",
       "projectName": "PiensaPeruAPIWeb",
-      "projectPath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWebBACK-Omar\\PiensaPeruAPIWeb.csproj",
+      "projectPath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWeb - Joel\\PiensaPeruAPIWeb\\PiensaPeruAPIWeb.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWebBACK-Omar\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\PracticaBack\\PiensaPeruAPIWeb - Joel\\PiensaPeruAPIWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
