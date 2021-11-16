@@ -6,13 +6,21 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PiensaPeruAPIWeb.Domain.Repositories;
+using PiensaPeruAPIWeb.Domain.Repositories.Users;
+using PiensaPeruAPIWeb.Domain.Services.Users;
+using PiensaPeruAPIWeb.Persistence.Contexts;
+using PiensaPeruAPIWeb.Persistence.Repositories;
+using PiensaPeruAPIWeb.Persistence.Repositories.Users;
+using PiensaPeruAPIWeb.Services.Users;
 
-namespace WebApplication
+namespace PiensaPeruAPIWeb
 {
     public class Startup
     {
@@ -28,10 +36,39 @@ namespace WebApplication
         {
 
             services.AddControllers();
+
+            services.AddRouting(option => option.LowercaseUrls = true);
+
+            services.AddDbContext<AppDbContext>(option =>
+            {
+                option.UseInMemoryDatabase("PiensaPeru-API");
+            });
+            
+            
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PiensaPeruAPIWeb", Version = "v1" });
             });
+            //Global
+            services.AddScoped<IUnitOfWork, UnitOfWork>(); 
+            
+            
+            //Scoped of User Bounded
+            
+            //User
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            
+            //Plan
+            services.AddScoped<IPlanService, PlanService>();
+            services.AddScoped<IPlanRepository, PlanRepository>();
+            
+            //UserPlan
+            services.AddScoped<IUserPlanService, UserPlanService>();
+            services.AddScoped<IUserPlanRepository, UserPlanRepository>();
+            
+            //Mapper
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +78,7 @@ namespace WebApplication
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PiensaPeruAPIWeb v1"));
             }
 
             app.UseHttpsRedirection();
@@ -56,4 +93,5 @@ namespace WebApplication
             });
         }
     }
+    
 }
