@@ -62,6 +62,18 @@ namespace PiensaPeruAPIWeb
             
             //Scoped of Content Bounded
             
+            //Content
+            services.AddScoped<IContentService, ContentService>();
+            services.AddScoped<IContentRepository, ContentRepository>();
+            
+            //Militant
+            services.AddScoped<IMilitantService, MilitantService>();
+            services.AddScoped<IMilitantRepository, MilitantRepository>();
+            
+            //MilitantContent
+            services.AddScoped<IMilitantContentService, MilitantContentService>();
+            services.AddScoped<IMilitantContentRepository, MilitantContentRepository>();
+    
             //MilitantType
             services.AddScoped<IMilitantTypeService, MilitantTypeService>();
             services.AddScoped<IMilitantTypeRepository, MilitantTypeRepository>();
@@ -87,7 +99,7 @@ namespace PiensaPeruAPIWeb
             //UserPlan
             services.AddScoped<IUserPlanService, UserPlanService>();
             services.AddScoped<IUserPlanRepository, UserPlanRepository>();
-            
+                     
             //Mapper
             services.AddAutoMapper(typeof(Startup));
         }
